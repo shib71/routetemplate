@@ -1,0 +1,15 @@
+{
+  "name": "routetemplate",
+  "version": "0.0.1",
+  "description": "Creates template functions for a given Express JS route",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap ./test"
+  },
+  "devDependencies": {
+    "tap": "*"
+  },
+  "repository": "https://github.com/shib71/routetemplate",
+  "author": "Blair McKenzie",
+  "license": "BSD"
+}
