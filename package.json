@@ -9,7 +9,19 @@
   "devDependencies": {
     "tap": "*"
   },
-  "repository": "https://github.com/shib71/routetemplate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shib71/routetemplate"
+  },
   "author": "Blair McKenzie",
-  "license": "BSD"
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "88e5c5846654e614df9984398f7a6545ed15bfff",
+  "bugs": {
+    "url": "https://github.com/shib71/routetemplate/issues"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {}
 }
