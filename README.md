@@ -18,3 +18,7 @@ also be used client side.
     yourURL("abc");                        // => "/your/blog/abc/:postid"
     yourURL("abc",123);                    // => "/your/blog/abc/123"
     yourURL({ blogid:"def", postid:456 }); // => "/your/blog/def/456"
+    
+Pass in an extra argument to add query parameters to the URL. An object argument will
+be automatically encoded and converted to the form "key1=val1&key2=val2". If you use the
+hash-first-argument form shown before, extra values are added in the same way.

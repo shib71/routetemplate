@@ -1,6 +1,6 @@
 {
   "name": "routetemplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Creates template functions for a given Express JS route",
   "main": "index.js",
   "scripts": {
