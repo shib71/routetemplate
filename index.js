@@ -1,9 +1,19 @@
+var mkdirp = require("mkdirp");
+var fs = require("fs");
+
 module.exports = function(config){
   config.extraparams = config.extraparams || true;
+  config.jspath = config.extraparams || "";
   
-  if (config.route){
-    return getFromExpressRoute(config.route,config.prefix,config.extraparams);
+  var fn = getFromExpressRoute(config.route,config.prefix,config.extraparams);
+  
+  if (config.jspath.length){
+    if (!fs.existsSync(path.dirname(config.jspath)))
+      mkdirp.sync(path.dirname(config.jspath));
+    fs.writeFileSync(config.jspath,"module.exports = " + fn.toSource());
   }
+  
+  return fn;
 }
 
 function getFromExpressRoute(route,routeprefix,extraparams){
