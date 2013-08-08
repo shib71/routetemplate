@@ -1,16 +1,17 @@
 var mkdirp = require("mkdirp");
 var fs = require("fs");
+var path = require("path");
 
 module.exports = function(config){
   config.extraparams = config.extraparams || true;
-  config.jspath = config.extraparams || "";
+  config.jspath = config.jspath || "";
   
   var fn = getFromExpressRoute(config.route,config.prefix,config.extraparams);
   
   if (config.jspath.length){
     if (!fs.existsSync(path.dirname(config.jspath)))
       mkdirp.sync(path.dirname(config.jspath));
-    fs.writeFileSync(config.jspath,"module.exports = " + fn.toSource());
+    fs.writeFileSync(config.jspath,"module.exports = " + fn.toString());
   }
   
   return fn;
