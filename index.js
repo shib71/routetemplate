@@ -91,7 +91,7 @@ function getFromExpressRoute(route,routeprefix,extraparams){
   fn.push("return ");
   fn.push(tokens.map(function(v){
     if (v.search(reParam)>-1)
-      return v.slice(1).replace(/[^\w]/g,'');
+      return "encodeURI(" + v.slice(1).replace(/[^\w]/g,'') + ")";
     else
       return "'"+v+"'";
   }).join("+"));
