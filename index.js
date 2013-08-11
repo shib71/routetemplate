@@ -80,9 +80,11 @@ function getFromExpressRoute(route,routeprefix,extraparams){
         fn.push(params[i]);
         fn.push("=");
         fn.push(params[i]);
-        fn.push(" || ':");
+        fn.push(" === undefined ? ':");
         fn.push(params[i]);
-        fn.push("';");
+        fn.push("' : ");
+        fn.push(params[i]);
+        fn.push(";");
       }
     }
   }
